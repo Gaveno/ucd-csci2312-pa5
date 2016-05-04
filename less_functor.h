@@ -22,7 +22,7 @@ namespace CS2312 {
     class less<string> {
     public:
         bool operator()(const string &a, const string &b) {
-            return (a[0] < b[0]);
+            return (a < b);
         }
     };
 
@@ -30,7 +30,10 @@ namespace CS2312 {
     class less<const char *> {
     public:
         bool operator()(const char *a, const char *b) {
-            return (*a < *b);
+            string _a, _b;
+            _a = a;
+            _b = b;
+            return (_a < _b);
         }
     };
 }
